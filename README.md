@@ -85,3 +85,12 @@ Este repositório contém um pipeline de CI/CD para uma aplicação FastAPI, uti
 - `README.md`: Documentação do projeto e instruções de uso.
 
 ## resultado final
+
+
+<img width="1135" height="191" alt="mensagem final" src="https://github.com/user-attachments/assets/e2416cb3-f66a-4137-bb03-6e443d09e694" />
+<img width="679" height="106" alt="kubectl pods funcionando" src="https://github.com/user-attachments/assets/55b26287-6fa9-4419-b584-4e32739f034d" />
+<img width="1284" height="794" alt="dashboard argocd" src="https://github.com/user-attachments/assets/377a54d1-615e-47d8-a525-ad34c0294d81" />
+<img width="859" height="836" alt="historico de commits do repositorio hello manifests" src="https://github.com/user-attachments/assets/dbd582b1-91ac-4948-8a7f-4c700d52602e" />
+<img width="872" height="745" alt="historico de imagens no docker hub" src="https://github.com/user-attachments/assets/f6c5e53c-2e47-4f77-b427-7b4ee42b318b" />
+<img width="989" height="468" alt="pipeline funcionando" src="https://github.com/user-attachments/assets/763dffb6-b31a-43de-916d-b4e085e2940e" />
+
