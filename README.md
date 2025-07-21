@@ -61,3 +61,27 @@ A configuração inicial requer os seguintes passos manuais:
     * Faça `commit` e `push` para a branch `main`.
     * Aguarde alguns minutos. A pipeline do GitHub Actions será executada, e o ArgoCD irá sincronizar a aplicação.
     * Atualize a página `http://localhost:8081`. A sua alteração deverá estar refletida.
+---
+## Configuração do Workflow
+O workflow do GitHub Actions está definido no ficheiro `.github/workflows/ci.yaml`. Ele é acionado por `push` na branch `main` e executa os seguintes passos:
+
+* **Build da Imagem Docker**: Utiliza o Dockerfile para construir a imagem da aplicação.
+* **Login no Docker Hub**: Autentica-se no Docker Hub usando as credenciais fornecidas.
+* **Push da Imagem**: Publica a imagem no Docker Hub com uma tag baseada no hash do commit.
+* **Clonagem do Repositório de Manifestos**: Clona o repositório `hello-manifests` para atualizar os manifestos Kubernetes.
+
+* **Atualização do Manifesto de Deployment**: Substitui a tag da imagem no `deployment.yaml` pela nova tag da imagem Docker.
+* **Commit e Push das Alterações**: Faz commit das alterações no `deployment.yaml` e faz push para o repositório `hello-manifests`.
+
+* **Sincronização com o ArgoCD**: O ArgoCD detecta automaticamente a alteração no repositório de manifestos e aplica as mudanças ao cluster Kubernetes.
+---
+# CI/CD Pipeline para Aplicação FastAPI
+Este repositório contém um pipeline de CI/CD para uma aplicação FastAPI, utilizando GitHub Actions para automação de build e deploy. O objetivo é facilitar o processo de integração contínua e entrega contínua, garantindo que as alterações no código sejam testadas e implantadas automaticamente.
+## Estrutura do Repositório
+- `.github/workflows/ci.yaml`: Define o workflow de CI/CD que é acionado por pushs na branch `main`.
+- `main.py`: Código da aplicação FastAPI.
+- `Dockerfile`: Define como a imagem Docker da aplicação é construída.
+- `requirements.txt`: Lista as dependências da aplicação.
+- `README.md`: Documentação do projeto e instruções de uso.
+
+## resultado final
