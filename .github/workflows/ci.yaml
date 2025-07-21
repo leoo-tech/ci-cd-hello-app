@@ -1,8 +1,14 @@
 name: CI-CD Pipeline
 
 on:
+  workflow_dispatch: # Permite o acionamento manual, sempre útil
   push:
     branches: [ "main" ]
+    paths:
+      - 'main.py'
+      - 'requirements.txt'
+      - 'Dockerfile'
+      - '.github/workflows/**' # Importante para acionar em mudanças no próprio workflow
 
 jobs:
   build-and-push-image:
